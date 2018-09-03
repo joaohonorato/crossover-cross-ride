@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 @Component
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler extends Throwable {
 
   private static final Logger LOG = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 

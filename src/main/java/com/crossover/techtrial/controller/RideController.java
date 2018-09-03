@@ -6,6 +6,8 @@ package com.crossover.techtrial.controller;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.crossover.techtrial.exceptions.GlobalExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -28,10 +30,10 @@ import com.crossover.techtrial.service.RideService;
 public class RideController {
   
   @Autowired
-  RideService rideService;
+  private RideService rideService;
 
   @PostMapping(path ="/api/ride")
-  public ResponseEntity<Ride> createNewRide(@RequestBody Ride ride) {
+  public ResponseEntity<Ride> createNewRide(@RequestBody Ride ride) throws GlobalExceptionHandler {
     return ResponseEntity.ok(rideService.save(ride));
   }
   

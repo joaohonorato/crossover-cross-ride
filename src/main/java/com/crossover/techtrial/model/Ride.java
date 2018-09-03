@@ -31,14 +31,15 @@ public class Ride implements Serializable{
   @NotNull
   @Column(name = "end_time")
   String endTime;
-  
+
+  @NotNull
   @Column(name = "distance")
   Long distance;
-  
+
   @ManyToOne
   @JoinColumn(name = "driver_id", referencedColumnName = "id")
   Person driver;
-  
+
   @ManyToOne
   @JoinColumn(name = "rider_id", referencedColumnName = "id")
   Person rider;
